@@ -14,5 +14,12 @@
   {
     "name": "cerises",
     "quantity": 10
+  },
+  {
+    "name": "litchie",
+    "quantity": 55
+  },
+  {
+    "name": "undefined"
   }
 ]
