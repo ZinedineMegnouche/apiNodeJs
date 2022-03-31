@@ -45,8 +45,13 @@ const addProduct = (name, quantity) => {
  *  
  * @returns requete GET http://localhost:3000/products
  */
-const getProductsAsync = () => {
-    return axios.get('http://localhost:3000/products');
+const getProductsAsync = async () => {
+    try {
+        const res = await axios.get('http://localhost:3000/products')
+        console.log("getProductAsync :", res.data)
+    } catch (err) {
+        console.log("getProductAsync :", err)
+    }
 }
 
 
@@ -58,11 +63,6 @@ const getProductsAsync = () => {
 
     addProduct('litchie', 5)
 
-    const resAsync = await getProductsAsync()
-
-    resAsync.then((value) => {
-        console.log('\nLISTE DES PRODUITS (ASYNC) :', value.data)
-    }
-    )
+    getProductsAsync();
 
 })()
