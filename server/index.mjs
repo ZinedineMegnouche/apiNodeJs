@@ -5,12 +5,13 @@ import router from "./routes.mjs";
 import swaggerUI from "swagger-ui-express";
 import docs from "./docs/index.mjs"
 //import dotenv from "./../.env";
-
+import env from 'dotenv'
 //dotenv.config()
 
 // APP
 const app = express();
-const port = process.env.PORT || 3000;
+env.config()
+const port = process.env.PORT;
 
 // MIDDLEWARES
 app.use(morgan("tiny"));
