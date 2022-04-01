@@ -2,13 +2,18 @@ import express from "express";
 const router = express.Router();
 
 import { add, getAll, getByName, remove } from "./products.mjs";
+//import { auth } from "./auth/index.mjs"
 
 // add
 router.post("/products", (req, res) => {
   const { name, quantity } = req.body;
-  res.send(add(name, quantity));
+  //res.send(auth(name, quantity));
 });
 
+router.post("/auth", (req, res) => {
+  const { name, password } = req.body;
+  res.send(add(name, quantity));
+});
 // getAll
 router.get("/products", (_, res) => {
   res.send(JSON.stringify(getAll()));

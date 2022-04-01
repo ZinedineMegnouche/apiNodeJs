@@ -5,18 +5,34 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index.mjs --ignore 'products.json'",
-    "start": "node index.mjs"
+    "start": "node index.mjs",
+    "precommit": "lint-staged",
+    "lint": "eslint *.mjs",
+    "lint:fix": "eslint --fix *.mjs"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-eslint": "8.2.1",
+    "eslint": "4.17.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-mfe": "0.1.2",
+    "eslint-plugin-import": "2.8.0",
+    "husky": "0.14.3",
+    "lint-staged": "6.1.0",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
+    "dotenv": "^16.0.0",
     "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+    "prettier": "^2.6.1",
     "swagger-ui-express": "^4.3.0"
   },
-  "description": ""
+  "description": "",
+  "lint-staged": {
+    "*.js": "eslint"
+  }
 }
